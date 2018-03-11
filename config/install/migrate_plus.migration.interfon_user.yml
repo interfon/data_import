@@ -1,0 +1,29 @@
+id: interfon_user
+langcode: en
+status: true
+dependencies:
+    enforced:
+        module:
+            - interfon_user_import
+label: 'Interfon user migration'
+source:
+    plugin: csv
+    track_changes: true
+    path: /data/interfon_user.csv
+    header_row_count: 1
+    keys:
+        - unique_id
+destination:
+    plugin: entity:user
+process:
+    name: username
+    field_first_name: field_first_name
+    field_last_name: field_last_name
+    pass: password
+    status: status
+    mail: email
+    init: init
+    field_department:
+        plugin: skip_on_empty
+        method: process
+        source: tid
