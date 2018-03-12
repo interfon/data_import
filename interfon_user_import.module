@@ -12,7 +12,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
 function interfon_user_import_help($route_name, RouteMatchInterface $route_match) {
     switch($route_name) {
         // Main module help for the custom_user_migrate module
-        case 'help.page.interfon_user_import':
+        case 'help.page.user_import':
             $output='<h3>'.t('About').'</h3>'
                 .'<p>'.t('User import').'</p>';
     }
@@ -23,6 +23,6 @@ function interfon_user_import_help($route_name, RouteMatchInterface $route_match
  */
 function interfon_user_import_migration_plugins_alter(&$definitions) {
     $definitions['interfon_user']['source']['path']=
-        drupal_get_path('module','interfon_user_import')
+        drupal_get_path('module','user_import')
         .$definitions['interfon_user']['source']['path'];
 }
