@@ -2,3 +2,7 @@
 .idea/
 
 *.bak
+
+# Ignore data files
+data/interfon_users.csv
+
