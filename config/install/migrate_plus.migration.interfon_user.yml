@@ -4,15 +4,15 @@ status: true
 dependencies:
     enforced:
         module:
-            - user_import
+            - interfon_data_import
 label: 'Interfon user migration'
 source:
     plugin: csv
     track_changes: true
-    path: /data/interfon_user.csv
+    path: modules/custom/interfon_data_import/data/interfon_users.csv
     header_row_count: 1
     keys:
-        - unique_id
+        - email
 destination:
     plugin: entity:user
 process:
