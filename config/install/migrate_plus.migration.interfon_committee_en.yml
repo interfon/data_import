@@ -1,0 +1,38 @@
+id: interfon_committee_en
+label: 'Interfon committee english'
+langcode: 'en'
+status: true
+dependencies:
+    enforced:
+        module:
+            - taxonomy
+            - interfon_data_import
+
+source:
+    plugin: csv
+    track_changes: true
+    path: modules/custom/interfon_data_import/data/interfon_committees.csv
+    header_row_count: 1
+    keys:
+      - tid
+
+process:
+    vid:
+        plugin: default_value
+        default_value: 'interfon_committee'
+    tid:
+        plugin: migration
+        source: tid
+        migration: interfon_committee
+    weight: weight
+    name: name_en
+    description: description_en
+    weight: weight
+
+destination:
+    plugin: entity:taxonomy_term
+    translations: true
+
+migration_dependencies:
+    required:
+      - interfon_committee

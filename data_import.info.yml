@@ -1,9 +1,0 @@
-name: User import
-type: module
-description: CSV-based user import
-core: 8.x
-package: Interfon
-dependencies:
-  - migrate_source_csv
-  - migrate_plus
-  - migrate_tools

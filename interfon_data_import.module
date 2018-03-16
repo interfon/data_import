@@ -14,7 +14,7 @@ function interfon_data_import_help($route_name, RouteMatchInterface $route_match
         // Main module help for the custom_user_migrate module
         case 'help.page.interfon_data_import':
             $output='<h3>'.t('About').'</h3>'
-                .'<p>'.t('Data import').'</p>';
+                .'<p>'.t('Interfon Data import').'</p>';
     }
 }
 
@@ -22,11 +22,15 @@ function interfon_data_import_help($route_name, RouteMatchInterface $route_match
  * hook_migration_plugins_alter()
  */
 function interfon_data_import_migration_plugins_alter(&$definitions) {
-    $definitions['interfon_committee']['source']['path']=
-        drupal_get_path('module','interfon_data_import')
-        .$definitions['interfon_committee']['source']['path'];
-
-    $definitions['interfon_user']['source']['path']=
-        drupal_get_path('module','interfon_data_import')
-        .$definitions['interfon_user']['source']['path'];
+    $module_path=drupal_get_path('module','interfon_data_import');
+    $entities=[
+        'interfon_committee',
+        'interfon_committee_en',
+        'interfon_user',
+        ];
+    foreach ($entities as $entity) {
+        $definitions[$entity]['source']['path']=
+            $module_path . $definitions[$entity]['source']['path'];
+        error_log($entity.".source.path=".$definitions[$entity]['source']['path']);
+    }
 }

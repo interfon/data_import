@@ -1,11 +1,11 @@
 id: interfon_user
-langcode: en
+label: 'Interfon user migration'
 status: true
 dependencies:
     enforced:
         module:
             - interfon_data_import
-label: 'Interfon user migration'
+
 source:
     plugin: csv
     track_changes: true
@@ -13,8 +13,14 @@ source:
     header_row_count: 1
     keys:
         - email
-destination:
-    plugin: entity:user
+#    column_names:
+#      - username: name
+#      - field_first_name: field_first_name
+#      - field_last_name: field_last_name
+#      - password: pass
+#      - status: status
+#      - email: mail
+
 process:
     name: username
     field_first_name: field_first_name
@@ -23,7 +29,10 @@ process:
     status: status
     mail: email
     init: init
-    field_department:
-        plugin: skip_on_empty
-        method: process
-        source: tid
+#    field_department:
+#        plugin: skip_on_empty
+#        method: process
+#        source: tid
+
+destination:
+    plugin: entity:user
