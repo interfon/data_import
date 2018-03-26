@@ -4,6 +4,5 @@
 *.bak
 
 # Ignore data files
-data/interfon_committees.csv
-data/interfon_users.csv
+data/*.csv
 
