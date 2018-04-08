@@ -17,12 +17,12 @@ source:
       - tid
 
     column_names:
-      - tid: Term Id
-      - weight: Weight
-      - name_en: Name
-      - description_en: Description (English)
-      - name_fr: Nom
-      - description_fr: Description (Français)
+      - tid: 'Term Id'
+      - weight: 'Weight'
+      - name_en: 'Name'
+      - description_en: 'Description (English)'
+      - name_fr: 'Nom'
+      - description_fr: 'Description (Français)'
 
 process:
     vid:
@@ -30,8 +30,15 @@ process:
       default_value: 'interfon_committee'
     tid: tid
     weight: weight
-    name: name_fr
-    description: description_fr
+    langcode:
+      plugin: default_value
+      default_value: 'fr'
+    name:
+      source: name_fr
+      language: 'fr'
+    description:
+      source: description_fr
+      language: 'fr'
 
 destination:
     plugin: entity:taxonomy_term

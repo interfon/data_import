@@ -1,5 +1,5 @@
 id: interfon_committee_en
-label: 'Interfon committee english'
+label: 'Interfon committee English'
 langcode: 'en'
 status: true
 dependencies:
@@ -17,12 +17,12 @@ source:
       - tid
 
     column_names:
-      - tid: Term Id
-      - weight: Weight
-      - name_en: Name
-      - description_en: Description (English)
-      - name_fr: Nom
-      - description_fr: Description (Français)
+      - tid: 'Term Id'
+      - weight: 'Weight'
+      - name_en: 'Name'
+      - description_en: 'Description (English)'
+      - name_fr: 'Nom'
+      - description_fr: 'Description (Français)'
 
 process:
     vid:
@@ -33,9 +33,15 @@ process:
         source: tid
         migration: interfon_committee
     weight: weight
-    name: name_en
-    description: description_en
-    weight: weight
+    langcode:
+      plugin: default_value
+      default_value: 'en'
+    name:
+      source: name_en
+      language: 'en'
+    description:
+      source: description_en
+      language: 'en'
 
 destination:
     plugin: entity:taxonomy_term
@@ -43,4 +49,4 @@ destination:
 
 migration_dependencies:
     required:
-      - interfon_committee
+      - interfon_committee_fr
