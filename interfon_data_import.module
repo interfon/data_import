@@ -26,6 +26,8 @@ function interfon_data_import_migration_plugins_alter(&$definitions) {
     $entities=[
       'interfon_committee_fr',
       'interfon_committee_en',
+      'interfon_function_fr',
+      'interfon_function_en',
       'interfon_salutation_fr',
       'interfon_salutation_en',
       // 'interfon_user',

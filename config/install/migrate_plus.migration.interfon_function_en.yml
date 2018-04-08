@@ -1,10 +1,10 @@
-id: interfon_committee_fr
-label: 'Interfon commission'
-langcode: 'fr'
+id: interfon_function_en
+label: 'Interfon fonction'
+langcode: 'en'
 status: true
 migration_group: interfon
 migration_tags:
-    - committee
+    - function
     - interfon
 dependencies:
     enforced:
@@ -15,7 +15,7 @@ dependencies:
 source:
     plugin: csv
     track_changes: true
-    path: modules/custom/interfon_data_import/data/committee.csv
+    path: modules/custom/interfon_data_import/data/function.csv
     header_row_count: 1
     keys:
       - tid
@@ -31,16 +31,22 @@ source:
 process:
     vid:
         plugin: default_value
-        default_value: 'interfon_committee'
-    tid: tid
+        default_value: 'interfon_function'
+    tid:
+        plugin: migration
+        source: tid
+        migration: interfon_function_fr
     weight: weight
     langcode:
         plugin: default_value
-        default_value: 'fr'
-    name: name_fr
-    description: description_fr
+        default_value: 'en'
+    name: name_en
+    description: description_en
 
 destination:
     plugin: entity:taxonomy_term
+    translations: true
 
-migration_dependencies: {}
+migration_dependencies:
+    required:
+      - interfon_function_fr

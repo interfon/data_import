@@ -1,5 +1,5 @@
 id: interfon_committee_en
-label: 'Interfon committee (English)'
+label: 'Interfon committee'
 langcode: 'en'
 status: true
 migration_group: interfon
@@ -15,7 +15,7 @@ dependencies:
 source:
     plugin: csv
     track_changes: true
-    path: modules/custom/interfon_data_import/data/committees.csv
+    path: modules/custom/interfon_data_import/data/committee.csv
     header_row_count: 1
     keys:
       - tid
