@@ -25,9 +25,9 @@ function interfon_data_import_migration_plugins_alter(&$definitions) {
     $module_path=drupal_get_path('module','interfon_data_import');
     $entities=[
       'interfon_committee_fr',
-      // 'interfon_salutation_fr',
       'interfon_committee_en',
-      // 'interfon_salutation_en',
+      'interfon_salutation_fr',
+      'interfon_salutation_en',
       // 'interfon_user',
       ];
     foreach ($entities as $entity) {

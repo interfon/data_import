@@ -1,6 +1,6 @@
-id: interfon_salutation_en
-label: 'Interfon salutation (English)'
-langcode: 'en'
+id: interfon_salutation_fr
+label: 'Salutation (français)'
+langcode: 'fr'
 status: true
 migration_group: interfon
 migration_tags:
@@ -30,23 +30,17 @@ source:
 
 process:
     vid:
-        plugin: default_value
-        default_value: 'interfon_salutation'
-    tid:
-        plugin: migration
-        source: tid
-        migration: interfon_salutation_fr
+      plugin: default_value
+      default_value: 'interfon_salutation'
+    tid: tid
     weight: weight
     langcode:
         plugin: default_value
-        default_value: 'en'
-    name: name_en
-    description: description_en
+        default_value: 'fr'
+    name: name_fr
+    description: description_fr
 
 destination:
     plugin: entity:taxonomy_term
-    translations: true
 
-migration_dependencies:
-    required:
-      - interfon_salutation_fr
+migration_dependencies: {}
