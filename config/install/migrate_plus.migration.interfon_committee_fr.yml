@@ -1,7 +1,11 @@
-id: interfon_committee
-label: 'Interfon committee'
+id: interfon_committee_fr
+label: 'Interfon committee (français)'
 langcode: 'fr'
 status: true
+migration_group: interfon
+migration_tags:
+    - committee
+    - interfon
 dependencies:
     enforced:
         module:
@@ -22,23 +26,19 @@ source:
       - name_en: 'Name'
       - description_en: 'Description (English)'
       - name_fr: 'Nom'
-      - description_fr: 'Description (Français)'
+      - description_fr: 'Description (français)'
 
 process:
     vid:
-      plugin: default_value
-      default_value: 'interfon_committee'
+        plugin: default_value
+        default_value: 'interfon_committee'
     tid: tid
     weight: weight
     langcode:
-      plugin: default_value
-      default_value: 'fr'
-    name:
-      source: name_fr
-      language: 'fr'
-    description:
-      source: description_fr
-      language: 'fr'
+        plugin: default_value
+        default_value: 'fr'
+    name: name_fr
+    description: description_fr
 
 destination:
     plugin: entity:taxonomy_term
