@@ -33,9 +33,9 @@ process:
         plugin: default_value
         default_value: 'interfon_committee'
     tid:
-        plugin: migration
-        source: tid
+        plugin: migration_lookup
         migration: interfon_committee_fr
+        source: tid
     weight: weight
     langcode:
         plugin: default_value

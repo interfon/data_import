@@ -1,0 +1,3 @@
+tid,weight,name_en,description_en,name_fr,description_fr
+male,0,Mr,Mister,M,Monsieur
+female,1,Ms,Misstress,Mme,Madame
