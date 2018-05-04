@@ -4,5 +4,5 @@ vice-president,1,Vice-President,,Vice-Président
 honorific-president,2,Honorific President,,Président d'honneur,
 treasurer,3,Treasurer,Treasury,Trésorier,Trésor
 secretary,4,Secretary,,Secrétaire,
-member,5,Member,Membership,Membre,
+director,5,Director,Member of the board of directors,Administrateur,Membre du conseil d'administration
 employee,6,Employee,,Employé(e),
