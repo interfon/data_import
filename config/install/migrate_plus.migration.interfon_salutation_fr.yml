@@ -14,9 +14,11 @@ dependencies:
 
 source:
     plugin: csv
+    delimiter: ';'
+    enclosure: '"'
     track_changes: true
-    path: modules/custom/interfon_data_import/data/salutation.csv
     header_row_count: 1
+    path: modules/custom/interfon_data_import/data/salutation.csv
     keys:
       - tid
 

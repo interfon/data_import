@@ -1,8 +1,8 @@
-tid,weight,name_en,description_en,name_fr,description_fr
-president,0,President,,Président,
-vice-president,1,Vice-President,,Vice-Président
-honorific-president,2,Honorific President,,Président d'honneur,
-treasurer,3,Treasurer,Treasury,Trésorier,Trésor
-secretary,4,Secretary,,Secrétaire,
-member,5,Member,Membership,Membre,
-employee,6,Employee,,Employé(e),
+tid;weight;name_en;description_en;name_fr;description_fr
+president;0;President;;Président;
+vice-president;1;Vice-President;;Vice-Président
+honorific-president;2;Honorific President;;Président d'honneur;
+treasurer;3;Treasurer;Treasury;Trésorier;Trésor
+secretary;4;Secretary;;Secrétaire;
+director;5;Director;Member of the board of directors;Administrateur;Membre du conseil d'administration
+employee;6;Employee;;Employé(e);

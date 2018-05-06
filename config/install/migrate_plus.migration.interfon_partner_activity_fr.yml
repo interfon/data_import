@@ -1,10 +1,10 @@
-id: interfon_function_en
-label: 'Interfon function'
-langcode: 'en'
+id: interfon_partner_activity_fr
+label: 'Activité partenaire'
+langcode: 'fr'
 status: true
 migration_group: interfon
 migration_tags:
-    - function
+    - activity
     - interfon
 dependencies:
     enforced:
@@ -18,7 +18,7 @@ source:
     enclosure: '"'
     track_changes: true
     header_row_count: 1
-    path: modules/custom/interfon_data_import/data/function.csv
+    path: modules/custom/interfon_data_import/data/partner-activity.csv
     keys:
       - tid
 
@@ -33,22 +33,18 @@ source:
 process:
     vid:
         plugin: default_value
-        default_value: 'interfon_function'
-    tid:
-        plugin: migration_lookup
-        migration: interfon_function_fr
-        source: tid
-    weight: weight
+        default_value: 'interfon_partner_activity'
+    tid: tid
+    weight:
+      plugin: default_value
+      default_value: csvrownum
     langcode:
         plugin: default_value
-        default_value: 'en'
-    name: name_en
-    description: description_en
+        default_value: 'fr'
+    name: name_fr
+    description: description_fr
 
 destination:
     plugin: entity:taxonomy_term
-    translations: true
 
-migration_dependencies:
-    required:
-      - interfon_function_fr
+migration_dependencies: {}

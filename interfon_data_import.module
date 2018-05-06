@@ -31,6 +31,8 @@ function interfon_data_import_migration_plugins_alter(&$definitions) {
       'interfon_salutation_fr',
       'interfon_salutation_en',
       'interfon_user',
+      'interfon_partner_activity_fr',
+      'interfon_partner_activity_en'
       ];
     foreach ($entities as $entity) {
         $definitions[$entity]['source']['path']=
