@@ -1,16 +1,16 @@
 status;email;password;title;first;last;language;function;committee
-true;blondeldidi@gmail.com;;male;Dominique;Blondel;fr;honorific-president,vice-president;administration,communication,wine
-true;bourquin.pierre@orange.fr;;male;Pierre;Bourquin;fr;treasurer;accounting
-true;claupin7401@orange.fr;;male;Claude;Pinaud;fr;vice-president,treasurer;accounting,administration
-true;ddcorcoba68@gmail.com;;male;Denis;Domínguez Corcoba;en;director;administration,communication,wine
-true;henri.masseboeuf@free.fr;;male;Henri;Masseboeuf;fr;director;accounting,sales
-true;jacques_blondel@orange.fr;;male;Jacques;Blondel;en;director;marketing,wine
-true;jean-louis.escourrou@neuf.fr;;male;Jean-Louis;Escourrou;fr;vice-president;sales
-true;natrac74@sfr.fr;;female;Nathalie;Rachwal;fr;employee;marketing
-true;persellolino39@k-net.fr;;male;Lino;Persello;fr;director;wine
-true;pp@acfp-consulting.com;;male;Pascal;Pique;fr;director;
-true;rjm.masson@orange.fr;;male;Roger;Masson;fr;director;communication,sales
-true;roger39600@orange.fr;;male;Roger;Girardot;fr;president;administration,marketing
-true;tosquinha65@gmail.com;;female;Paula;Correia;en;director;accounting,communication,marketing,wine
-true;veronique.geindre@wanadoo.fr;;female;Véronique;Geindre;fr;employee;
-true;yvette.bozonnet@orange.fr;;female;Yvette;Bozonnet;fr;secretary;communication,marketing,sales
+1;blondeldidi@gmail.com;;male;Dominique;Blondel;fr;honorific-president,vice-president;administration,communication,wine
+1;bourquin.pierre@orange.fr;;male;Pierre;Bourquin;fr;treasurer;accounting
+1;claupin7401@orange.fr;;male;Claude;Pinaud;fr;vice-president,treasurer;accounting,administration
+1;ddcorcoba68@gmail.com;;male;Denis;Domínguez Corcoba;en;director;administration,communication,wine
+1;henri.masseboeuf@free.fr;;male;Henri;Masseboeuf;fr;director;accounting,sales
+1;jacques_blondel@orange.fr;;male;Jacques;Blondel;en;director;marketing,wine
+1;jean-louis.escourrou@neuf.fr;;male;Jean-Louis;Escourrou;fr;vice-president;sales
+1;natrac74@sfr.fr;;female;Nathalie;Rachwal;fr;employee;marketing
+1;persellolino39@k-net.fr;;male;Lino;Persello;fr;director;wine
+1;pp@acfp-consulting.com;;male;Pascal;Pique;fr;director;
+1;rjm.masson@orange.fr;;male;Roger;Masson;fr;director;communication,sales
+1;roger39600@orange.fr;;male;Roger;Girardot;fr;president;administration,marketing
+1;tosquinha65@gmail.com;;female;Paula;Correia;en;director;accounting,communication,marketing,wine
+1;veronique.geindre@wanadoo.fr;;female;Véronique;Geindre;fr;employee;
+1;yvette.bozonnet@orange.fr;;female;Yvette;Bozonnet;fr;secretary;communication,marketing,sales
