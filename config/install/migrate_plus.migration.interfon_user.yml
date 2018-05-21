@@ -34,12 +34,30 @@ source:
 
 process:
     status: status
+    langcode: language
+    preferred_langcode: language
     mail: email
-    name: email
+    name:
+      -
+          plugin: concat
+          delimiter: '.'
+          source:
+          - first
+          - last
+      -
+          plugin: explode
+          delimiter: ' '
+      -
+          plugin: concat
+      -
+          plugin: callback
+          callable:
+            - '\Drupal\Component\Utility\Unicode'
+            - strtolower
     pass: email
     field_user_salutation:
         plugin: migration_lookup
-        migration: interfon_salutation_en
+        migration: interfon_salutation_fr
         source: title
     field_user_first_name: first
     field_user_last_name: last
