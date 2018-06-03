@@ -3,94 +3,97 @@ label: 'Interfon user'
 status: true
 migration_group: interfon
 migration_tags:
-    - interfon
-    - user
+  - interfon
+  - user
 dependencies:
-    enforced:
-        module:
-            - taxonomy
-            - interfon_data_import
+  enforced:
+    module:
+      - taxonomy
+      - interfon_data_import
 
 source:
-    plugin: csv
-    delimiter: ';'
-    enclosure: '"'
-    track_changes: true
-    header_row_count: 1
-    path: 'modules/custom/interfon_data_import/data/user.csv'
-    keys:
-      - email
-
-    column_names:
-      - status: 'user status'
-      - email: 'email address'
-      - password: 'user password'
-      - title: 'salutation'
-      - first: 'first name'
-      - last: 'last name'
-      - language: 'user language'
-      - function: 'Interfon function(s)'
-      - committee: 'Interfon committee membership(s)'
+  plugin: csv
+  delimiter: ';'
+  enclosure: '"'
+  track_changes: true
+  header_row_count: 1
+  path: 'modules/custom/interfon_data_import/data/user.csv'
+  keys:
+    - email
+  column_names:
+    - status: 'user status'
+    - email: 'email address'
+    - password: 'user password'
+    - title: 'salutation'
+    - first: 'first name'
+    - last: 'last name'
+    - language: 'user language'
+    - function: 'Interfon function(s)'
+    - committee: 'Interfon committee membership(s)'
 
 process:
-    status: status
-    langcode: language
-    preferred_langcode: language
-    mail: email
-    name:
-      -
-          plugin: concat
-          delimiter: '.'
-          source:
-          - first
-          - last
-      -
-          plugin: explode
-          delimiter: ' '
-      -
-          plugin: concat
-      -
-          plugin: callback
-          callable:
-            - '\Drupal\Component\Utility\Unicode'
-            - strtolower
-    pass: email
-    field_user_salutation:
-        plugin: migration_lookup
-        migration: interfon_salutation_fr
-        source: title
-    field_user_first_name: first
-    field_user_last_name: last
-    # field_user_last_name:
-    #     plugin: explode
-    #     delimiter: ' '
-    #     source: last
-        # strict: false
-    # langcode: language
-    field_user_interfon_function:
-      -
-          plugin: explode
-          delimiter: ','
-          source: function
-          # strict: false
-      -
-          plugin: migration_lookup
-          migration: interfon_function_fr
-    field_user_interfon_committee:
-      -
-          plugin: explode
-          delimiter: ','
-          source: committee
-          # strict: false
-      -
-          plugin: migration_lookup
-          migration: interfon_committee_fr
+  mail: email
+  pass:
+    plugin: callback
+    callable: md5
+    source: email
+  name:
+    -
+      plugin: concat
+      delimiter: '.'
+      source:
+      - first
+      - last
+    -
+      plugin: explode
+      delimiter: ' '
+    -
+      plugin: concat
+    -
+      plugin: callback
+      callable:
+        - '\Drupal\Component\Utility\Unicode'
+        - strtolower
+  status: status
+  langcode: language
+  preferred_langcode: language
+  field_user_salutation:
+    plugin: migration_lookup
+    migration: interfon_salutation_fr
+    source: title
+  field_user_first_name: first
+  field_user_last_name: last
+  # field_user_last_name:
+  #     plugin: explode
+  #     delimiter: ' '
+  #     source: last
+      # strict: false
+  # langcode: language
+  field_user_interfon_function:
+    -
+      plugin: explode
+      delimiter: ','
+      source: function
+      # strict: false
+    -
+      plugin: migration_lookup
+      migration: interfon_function_fr
+  field_user_interfon_committee:
+    -
+      plugin: explode
+      delimiter: ','
+      source: committee
+      # strict: false
+    -
+      plugin: migration_lookup
+      migration: interfon_committee_fr
 
 destination:
-    plugin: entity:user
+  plugin: entity:user
+  md5_passwords: true
 
 migration_dependencies:
-    required:
-      - interfon_committee_en
-      - interfon_function_en
-      - interfon_salutation_en
+  required:
+    - interfon_committee_en
+    - interfon_function_en
+    - interfon_salutation_en
