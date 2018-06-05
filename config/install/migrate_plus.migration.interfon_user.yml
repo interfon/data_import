@@ -63,12 +63,6 @@ process:
     source: title
   field_user_first_name: first
   field_user_last_name: last
-  # field_user_last_name:
-  #     plugin: explode
-  #     delimiter: ' '
-  #     source: last
-      # strict: false
-  # langcode: language
   field_user_interfon_function:
     -
       plugin: explode
